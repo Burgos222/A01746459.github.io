@@ -1,7 +1,134 @@
 <!DOCTYPE html>
-<html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <style>
+        body {
+            background-color: rgb(126, 117, 117);   
+        }
+        .self_image{
+        max-width: 50%;
+        max-height: 50%;
+        border-radius: 3.14%;
+        margin-left: 25%;
+        }
+        .port_image{
+            max-width: 40%;
+            max-height: 40%;
+            margin-left: 30%;
+        }
+
+        .tarjeta{
+            display:flex;
+            top: 10px;
+            flex-direction:column;
+            justify-content:space-between;
+            width:420px;
+            border: 1px solid rgb(0, 0, 255);
+            box-shadow: 2px 2px 8px 4px #003cffd1;
+            border-radius:15px;
+            font-family: sans-serif;
+            background-color: rgb(0, 0, 0);
+            margin-right: 2%;
+        }
+        .left {
+            float: left;
+            width: 30%;
+            margin-bottom: 10%;
+        }
+        .tarjeta_self{
+            text-align: center;
+            color: aliceblue;
+        }
+        .cuerpo_self{
+            padding: 10px;
+        }
+
+        .l{
+            display:contents;
+        }
+        .right {
+            padding: 5%;
+            width: 57%;
+        }
+
+        .pie{
+            background: #ffffff;
+            border-radius:0 0 15px 15px;
+            padding: 10px;
+            text-align:center;
+        }
+        .pie a{
+            text-decoration: none;
+            color: white;
+        }
+        .pie a:after {
+            position:initial;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            content: ""
+        }
+        
+        .column {
+            display: table;
+            border: 1px solid rgb(0, 0, 255);
+            box-shadow: 2px 2px 8px 4px #003cffd1;
+            border-radius:15px;
+            font-family: sans-serif;
+            margin: -5.5%;
+        }
+        
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <div class="row">    
+        <div class="tarjeta left" style="position:sticky;">
+        <h2 class="tarjeta_self">Sebastian Burgos Alanis</h2>
+        <div class="cuerpo_self">
+            <img class="self_image" src="./Images/yo.jpg" style="display: flex;">
+            <h2 class="tarjeta_self">Ingeniero en Tecnologías Computacionales</h2>
+            <h2 class="tarjeta_self" style="color: rgb(0, 143, 252);">Tecnológico de Monterrey</h2>
+            <img class="self_image" src="./Images/logotec_negro.jpg" style="display: flex;">
+        </div>
+        <div class="pie">   
+          <a style ="color: black" href="./doc/CV_Sebastian_Burgos.pdf">Curriculum</a>
+        </div>
+        </div>
+        <div class="tarjeta right">
+            <div class="column">
+                <div class="tarjeta l">
+                    <h2 class="tarjeta_self">Modelación de sistemas multiagentes con gráficas computacionales</h2>
+                    <div class="cuerpo_self">
+                        <img class = "port_image" src="./Images/agentes.png">
+                    </div>
+                    <h4 class="tarjeta_self">Desarrollamos un sistema de multiagentes en Python, usando la librería mesa, donde
+                        diseñamos una ciudad con semáforos y autos como automatas y un sistema integrado en cada
+                        auto ,tipo Waze, utilizando el algoritmo de Dijkstra. La simulación fue con Unity en 3ra
+                        Dimensión.</h4>
+                    <div class="pie">   
+                        <a style ="color: black" href="https://miscompetenciastec21.tec.mx/elumen/portfolio/R1Y0ZkZul0jTArvl">Link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tarjeta right">
+            <div class="column">
+                <div class="tarjeta l">
+                    <h2 class="tarjeta_self">Integracion de Seguridad Informática de redes y sistemas de Software</h2>
+                    <div class="cuerpo_self">
+                        <img class = "port_image" src="./Images/integracion_software.png" style="flex: content;">
+                    </div>
+                    <h2 class="tarjeta_self">breve descripcion del trabajo</h2>
+                    <div class="pie">   
+                        <a style ="color: black" href="./doc/CV_Sebastian_Burgos.pdf">Download</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
 </html>
