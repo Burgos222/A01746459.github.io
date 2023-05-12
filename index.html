@@ -6,7 +6,7 @@
     <title>Portafolio</title>
     <style>
         body {
-            background-color: rgb(126, 117, 117);   
+            background-color: rgb(9, 7, 7);   
         }
         .self_image{
         max-width: 50%;
@@ -22,7 +22,7 @@
 
         .tarjeta{
             display:flex;
-            top: 10px;
+            top:10px;
             flex-direction:column;
             justify-content:space-between;
             width:420px;
@@ -35,8 +35,10 @@
         }
         .left {
             float: left;
+            position: sticky;
             width: 30%;
-            margin-bottom: 10%;
+            margin-bottom: 50%;
+            
         }
         .tarjeta_self{
             text-align: center;
@@ -87,7 +89,7 @@
 </head>
 <body>
     <div class="row">    
-        <div class="tarjeta left" style="position:sticky;">
+        <div class="tarjeta left" >
         <h2 class="tarjeta_self">Sebastian Burgos Alanis</h2>
         <div class="cuerpo_self">
             <img class="self_image" src="./Images/yo.jpg" style="display: flex;">
@@ -96,7 +98,7 @@
             <img class="self_image" src="./Images/logotec_negro.jpg" style="display: flex;">
         </div>
         <div class="pie">   
-          <a style ="color: black" href="./doc/CV_Sebastian_Burgos.pdf">Curriculum</a>
+          <a style ="color: black" href="./doc/Sebastian_Burgos Alanís_Resume_12-05-2023-10-35-14.pdf">Curriculum</a>
         </div>
         </div>
         <div class="tarjeta right">
@@ -123,9 +125,35 @@
                     <div class="cuerpo_self">
                         <img class = "port_image" src="./Images/integracion_software.png" style="flex: content;">
                     </div>
-                    <h2 class="tarjeta_self">breve descripcion del trabajo</h2>
+                        <h4 class="tarjeta_self">
+                            Desarrollamos una aplicación móvil para la asistencia de los ciudadanos en el Municipio de
+                            Atizapán. Utilizamos tecnologías de <u>Back-End</u> como: Node.Js, Docker Compose, FireBase (Google), Nginx, gRPC.
+                            <u>Front-End</u> utilizamos: Next.js, React.js y Tailwind css.  
+                        </h4>
+                        <h4 class="tarjeta_self">
+                            Para el desarrollo de la App Móvil Utilizamos Android Studio con C#.
+                        </h4>
                     <div class="pie">   
-                        <a style ="color: black" href="./doc/CV_Sebastian_Burgos.pdf">Download</a>
+                        <a style ="color: black" href="https://miscompetenciastec21.tec.mx/elumen/portfolio/kL0b0Yvtgj5s0AmY">Link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tarjeta right">
+            <div class="column">
+                <div class="tarjeta l">
+                    <h2 class="tarjeta_self">Resaltador de Sintaxis</h2>
+                    <div class="cuerpo_self">
+                        <img class = "port_image" src="./Images/resaltador_sintaxis.png" style="flex: content;">
+                    </div>
+                        <h4 class="tarjeta_self">
+                            Se diseñó un resaltador de Sintaxis en Python, donde recibe una gran cantidad de archivos (+2000),
+                            los cuales van siendo procesados de forma paralela (no necesariamente distribuida) por los distintos 
+                            nucelos que tiene la computadora. Al ser procesador por el Tokenizador, se despliegan en una página los
+                            resultados resaltados en sus respectivos colores.
+                        </h4>
+                    <div class="pie">   
+                        <a style ="color: black" href="https://miscompetenciastec21.tec.mx/elumen/portfolio/zlj89YzcG1xILZr8">Link</a>
                     </div>
                 </div>
             </div>
