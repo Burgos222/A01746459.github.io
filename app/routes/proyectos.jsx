@@ -1,13 +1,14 @@
+'user client';
 import Navbar from './components/navbar';
 import Tag from './components/tag';
 import ImageCarousel from './components/carroussel';
-import Forms from './components/forms';
+
 const images = [
   'https://via.placeholder.com/800x400',
   'https://via.placeholder.com/800x400',
   'https://via.placeholder.com/800x400'];
 
-export default function Home() {
+export default function Proyectos() {
   return (
     <main className=''>
       <Navbar/>
