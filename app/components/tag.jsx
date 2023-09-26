@@ -1,3 +1,4 @@
+'use client';
 import React from "react";
 
 export default function Tag() {
@@ -21,7 +22,7 @@ export default function Tag() {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </p>
             </div>
-            <a href="#" className="bg-blue-700 flex justify-center text-white hover:scale-110 hover:bg-blue-800 p-1">Link</a>
+            <a href="../resources/CV_SebastianBurgos.pdf" className="bg-blue-700 flex justify-center text-white hover:scale-110 hover:bg-blue-800 p-1">Link</a>
           </div>
         </div>
       </main>
