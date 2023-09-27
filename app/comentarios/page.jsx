@@ -1,9 +1,10 @@
 'user client';
+import Forms from "../components/forms";
 
 export default function Comentarios() {
   return (
-    <main className='text-white'>
-      <div>Comentarios</div>
+    <main className=''>
+      <Forms/>
     </main>
   )
 } 

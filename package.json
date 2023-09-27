@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource-variable/oxanium": "^5.0.12",
+    "@fontsource/share-tech-mono": "^5.0.8",
+    "@fontsource/squada-one": "^5.0.12",
     "autoprefixer": "10.4.16",
     "next": "13.5.2",
     "postcss": "8.4.30",
