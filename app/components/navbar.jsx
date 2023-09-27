@@ -21,7 +21,7 @@ export default function Navbar() {
               </div>
               <div className="flex flex-row-reverse mr-8">
                 <a href="#" className="text-gray-300 hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium ml-4">English</a>
-                <a href="#" className="text-gray-300 hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Español</a>
+                <a href="." className="text-gray-300 hover:bg-blue-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Español</a>
               </div>
             </div>
           </div>

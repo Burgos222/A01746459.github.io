@@ -6,4 +6,4 @@ export default function Comentarios() {
       <div>Comentarios</div>
     </main>
   )
-}
+} 
