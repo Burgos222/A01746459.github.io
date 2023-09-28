@@ -1,21 +1,19 @@
 import Tag from './components/tag';
 import Presentation from './components/presentation';
+import Carousel from './components/carousel';
 
 export default function Home() {
   return (
     <main>
-      <div className='p-3'>
-        <Presentation
-          imageSrc="resources/yo.jpg"
-          name="Sebastian Burgos"
-          carrer="ITC"
-        />
+      <div className='p-3 flex'>
+        <Presentation/>
+        
       </div>
-      <div className='m-3'>
-        <div className='space-x-2 grid grid-cols-3'>
+      <div className='ml-3 mr-3'>
+        <div className='space-x-2 grid grid-row'>
           <Tag
             imageSrc="resources/12345.png"
-            title="Resaltador de Sintaxis para un procesamiento amplio de archivos con Python"
+            title="Resaltador de Sintaxis para un procesamiento amplio de archivos"
             description="Se diseñó un resaltador de Sintaxis en Python, donde recibe una gran cantidad de archivos (+2000),
             los cuales van siendo procesados de forma paralela (no necesariamente distribuida) por los distintos 
             nucelos que tiene la computadora. Al ser procesador por el Tokenizador, se despliegan en una página los

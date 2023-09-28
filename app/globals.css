@@ -3,17 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 17, 24, 31;
-  --background-end-rgb: 17, 24, 31;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --foreground-rgb: 0, 0, 0; /* Text color (black) */
+  --background-start-rgb: 255, 255, 255; /* Background color (white) */
+  --background-end-rgb: 255, 255, 255; /* Background color (white) */
 }
 
 body {
@@ -26,3 +18,4 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
