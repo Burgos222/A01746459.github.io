@@ -11,7 +11,7 @@ export default function Tag({ images, title, description, linkUrl }) {
         </div>
 
         <div className="p-4 flex-grow">
-          <h1 className="text-xl font-semibold text-center p-3 hover:underline">{title}</h1>
+          <h1 className="text-xl font-semibold text-center p-3 hover:font-bold">{title}</h1>
           <div className="max-w-[1000px]">
             <p className="text-sm text-justify">{description}</p>
           </div>
