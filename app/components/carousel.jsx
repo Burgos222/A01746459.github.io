@@ -36,4 +36,3 @@ function ImageCarousel({ images }) {
 }
 
 export default ImageCarousel;
-
