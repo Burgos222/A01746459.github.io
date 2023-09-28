@@ -1,23 +1,26 @@
 'use client';
 import React from 'react';
+import ImageCarousel from './carousel';
 
-export default function Tag({ imageSrc, title, description, linkUrl }) {
+export default function Tag({ title, description, linkUrl }) {
+  const images = [
+    { src: 'resources/python.png', alt: 'Image 1' },
+    { src: 'resources/firebase.png', alt: 'Image 2' },
+    { src: 'resources/mongodb.png', alt: 'Image 3' },
+    
+  ];
   return (
     <main className="mb-3 ">
       <div className="border-2 border-black p-4 flex">
       <div className="w-32 h-32">
-        <img
-          className='w-full h-full object-cover'
-          src={imageSrc}
-          alt="Card Image"
-        />
+        <ImageCarousel images={images} />
       </div>
         
 
       <div className="p-4 flex-grow">
         <h1 className="text-xl font-semibold text-center p-3">{title}</h1>
-        <div class=" ml-3 max-w-[1000px] max-h-[200px] overflow-auto">
-        <p class="text-sm text-justify">
+        <div className=" ml-3 max-w-[1000px] max-h-[200px] overflow-auto">
+        <p className="text-sm text-justify">
         {description}
         </p>
         </div>
