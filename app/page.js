@@ -10,9 +10,9 @@ export default function Home() {
         
       </div>
       <div className='ml-3 mr-3'>
-        <div className='space-x-2 grid grid-row'>
+        <div className='grid grid-row'>
           <Tag
-            imageSrc="resources/12345.png"
+            imageSrc="resources/python.png"
             title="Resaltador de Sintaxis para un procesamiento amplio de archivos"
             description="Se diseñó un resaltador de Sintaxis en Python, donde recibe una gran cantidad de archivos (+2000),
             los cuales van siendo procesados de forma paralela (no necesariamente distribuida) por los distintos 
@@ -21,7 +21,7 @@ export default function Home() {
             linkUrl="https://miscompetenciastec21.tec.mx/elumen/portfolio/zlj89YzcG1xILZr8"
           />
           <Tag
-            imageSrc="resources/123.jpg"
+            imageSrc="resources/python.png"
             title="Modelación de sistemas multiagentes con gráficas computacionales"
             description="Desarrollamos un sistema de multiagentes en Python, usando la librería mesa, donde
             diseñamos una ciudad con semáforos y autos como automatas y un sistema integrado en cada
@@ -30,7 +30,7 @@ export default function Home() {
             linkUrl="https://miscompetenciastec21.tec.mx/elumen/portfolio/R1Y0ZkZul0jTArvl"
           />
           <Tag
-            imageSrc="resources/escudo-atz.png"
+            imageSrc="resources/python.png"
             className="bg-white"
             title="Integracion de Seguridad Informática de redes y sistemas de Software"
             description="Desarrollamos una aplicación móvil para la asistencia de los ciudadanos en el Municipio de
