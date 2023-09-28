@@ -18,9 +18,9 @@ export default function Tag({ images, title, description, linkUrl }) {
         </div>
           <a
             href={linkUrl}
-            className="px-2 py-24 hover:bg-black hover:text-white transition-colors duration-300 ease-in-out"
+            className="px-4 py-24 hover:bg-black hover:text-white transition-colors duration-300 ease-in-out"
           >
-            Link
+            +
           </a>
       </div>
     </main>

@@ -39,7 +39,7 @@ export default function Home() {
         <Tag
             images={forth}
             className="bg-white"
-            title="Desarrollo Colaborativo de una Plataforma de Subastas de Automóviles con Tecnologías Cloud y Web"
+            title="ArabaMarket"
             description="En este proyecto, un equipo de alrededor de 30 Ingenieros en Tecnologías 
             Computacionales se unió para desarrollar una plataforma web innovadora. Utilizamos un 
             conjunto de tecnologías que incluyeron AWS, GCP y Flask para la creación de la página web. 
@@ -52,7 +52,7 @@ export default function Home() {
             Aunque mi enfoque principal fue el back-end, también tuve una participación 
             significativa en el front-end, contribuyendo al despliegue de imágenes y al formato de 
             algunas tablas y precios."
-            linkUrl="https://github.com/ArabaMarket/BackEnd"
+            linkUrl="https://miscompetenciastec21.tec.mx/elumen/portfolio/BYNdLg9HeVLTeDK6"
           />
           <Tag
             images={ImagesTagOne}
@@ -77,7 +77,7 @@ export default function Home() {
           <Tag
             images={third}
             className="bg-white"
-            title="Seguridad Integral para Redes y Sistemas de Software"
+            title="Incidentes Atizapán"
             description="Creamos una aplicación móvil diseñada para brindar asistencia a los residentes
              del Municipio de Atizapán. En el desarrollo de esta aplicación, hemos empleado diversas 
              tecnologías en el lado del servidor, como Node.js, Docker Compose, Firebase de Google y Nginx,
