@@ -2,7 +2,7 @@
 import React from 'react';
 import ImageCarousel from './carousel';
 
-export default function Tag({ images, title, description, linkUrl }) {
+export default function Tag({ images, title, description, linkUrl, git }) {
   return (
     <main className="mb-3">
       <div className="border-2 border-black p-4 flex items-center justify-center">
