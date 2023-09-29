@@ -10,7 +10,7 @@ export default function Presentation({ imageSrc, name, carrer }) {
         <p className="mb-1 font-normal text-gray-700">Ingeniero en Tecnologías Computacionales</p>
         <a href="https://tec.mx/es" className="mb-1 hover:text-blue-600 hover:font-bold ease-in-out">Tecnológico de Monterrey</a>
         <a href="curriculum" className="flex flex-row-reverse">
-        <span className=" px-3 py-2 hover:bg-black hover:text-white transition-colors duration-300 ease-in-out">
+        <span className=" px-4 py-2 hover:bg-black hover:text-white transition-colors duration-300 ease-in-out">
          +
         </span>
         </a>

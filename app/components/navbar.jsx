@@ -3,9 +3,9 @@ import React from "react";
 
 export default function Navbar() {
     return (
-      <main className=''>
+      <main className='felx'>
         <nav className="border-b-2 border-black ">
-          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div className="mx-auto ">
             <div className="relative flex h-16 items-center justify-10 ">
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
