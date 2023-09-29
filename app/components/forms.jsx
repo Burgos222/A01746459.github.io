@@ -1,20 +1,57 @@
 'use client';
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { doc, setDoc } from 'firebase/firestore';
+import { db } from "@/firebase";
+import useFetchTodos from "@/hooks/fetchTodos";
 
 export default function Forms() {
-    return (
-      <main className=" max-w-xl">
-        <label htmlFor="website-admin" className=" font-semibold text-black">Username</label>
-          <div className="flex">
-            <input type="email" className="border-2 p-3 border-black w-[65ch] placeholder:hover:invisible" placeholder="adrianbravo@gmail.com"/>
-          </div>
-          
-          <div className="mt-2">
-          <label htmlFor="message" className="font-semibold text-black">Comentario</label>
-          <textarea id="message" rows="4" className="border-2 p-3 border-black w-[62.4ch] placeholder:hover:invisible" placeholder="Deja un mensaje en mi buzón..."></textarea>
-          <button type="button" className="border-2 border-black p-2 hover:bg-black hover:text-white duration-300 ease-in-out">submit</button>
-          </div>
 
+  const [todo, setTodo] = useState('')
+
+  const {todos, loading, error} = useFetchTodos()
+
+  async function HandlerTodo() {
+    if (!todo) { return }
+    const newKey = Object.keys(todoList).length === 0 ? 1 : Math.max(...Object.keys(todoList)) + 1
+    setTodoList({...todoList, [newKey]: todo })
+    setTodo('')
+    const userRef = doc(db, 'users', 'master')
+    await setDoc(userRef, {
+      'todos': {
+        [newKey]: todo
+      }
+    }, {merge:true})
+
+
+  }
+
+    return (
+      <main className=" max-w-xl flex">
+        <div className="p-3">
+          <label htmlFor="website-admin" className=" font-semibold text-black">Username</label>
+            <div className="flex">
+              <input type="email" className="border-2 p-3 border-black w-[65ch] placeholder:hover:invisible" placeholder="adrianbravo@gmail.com"/>
+            </div>
+          
+            <div className="mt-2">
+              <label htmlFor="message" className="font-semibold text-black">Comentario</label>
+              <textarea id="message" rows="4" className="border-2 p-3 border-black w-[65ch] placeholder:hover:invisible"
+              placeholder="Deja un mensaje en mi buzón..." 
+              value={todo} onChange={(e) => setTodo(e.target.value)}
+              ></textarea>
+              <button onClick={HandlerTodo} type="button" className="border-2 border-black p-2 hover:bg-black hover:text-white duration-300 ease-in-out">submit</button>
+            </div>
+          </div>
+          <div className="p-3 m-3">
+            {(loading) && (<span className="">loading...</span>)}
+              {Object.keys(todos).map((todo, i) => {
+                return(
+                  <div className="border-2 border-black p-3 mb-3 w-80" key={i}>
+                    {todos[todo]}
+                  </div>
+                )
+              })}
+          </div>
       </main>
       
     );}
