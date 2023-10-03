@@ -13,7 +13,7 @@ export default function useFetchTodos() {
         const docRef  = doc(db, 'users', 'master')
         const docSnap = await getDoc(docRef)
         if (docSnap.exists()) {
-          setTodos(docSnap.data().todos)
+          setTodos(docSnap.data().todos, loading)
         }
       } catch(error){
         setError('failed to load to do')

@@ -4,9 +4,9 @@ import ImageCarousel from './carousel';
 
 export default function Tag({ images, title, description, linkUrl, git }) {
   return (
-    <main className="mb-3">
+    <main className="mb-3 hover:bg-black hover:text-white transition-all duration-500">
       <div className="border-2 border-black p-4 flex items-center justify-center">
-        <div className="w-32 h-32">
+        <div className="md:w-32 w-18 h-32">
           <ImageCarousel className="" images={images} />
         </div>
 
@@ -18,7 +18,7 @@ export default function Tag({ images, title, description, linkUrl, git }) {
         </div>
           <a
             href={linkUrl}
-            className="px-4 py-24 hover:bg-black hover:text-white transition-colors duration-300 ease-in-out"
+            className="px-4 py-3  hover:bg-white hover:text-black transition-colors  ease-in-out"
           >
             +
           </a>
