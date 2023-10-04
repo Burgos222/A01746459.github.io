@@ -78,7 +78,7 @@ export default function Forms() {
         <div className="md:mt-6 md:w-1/2 mt-3 p-3 md:p-3">
           <div className="grid md:grid-cols-2">
             {loading && <span className="">Loading...</span>}
-            {error && <span className="text-red-500 font-bold">Error: {error}</span>}
+            {error && <span className="text-red-500 font-bold border-2 border-red-700 bg-red-200 flex justify-center">Error: {error}</span>}
             {Object.keys(todos).map((todoKey) => {
               const todo = todos[todoKey];
               return (
