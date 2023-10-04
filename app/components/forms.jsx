@@ -60,7 +60,7 @@ export default function Forms() {
             <textarea
               id="message"
               rows="4"
-              className="p-3 border-2 md:w-[65ch] w-[35ch] border-black placeholder:hover:invisible"
+              className="p-3 border-2 md:w-[65ch] w-[34.5ch] border-black placeholder:hover:invisible"
               placeholder="Deja un mensaje en mi buzón..."
               value={todo}
               onChange={(e) => setTodo(e.target.value)}
