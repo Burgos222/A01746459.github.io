@@ -17,7 +17,7 @@ export default function Navbar() {
                 </div>
               </div>
               <div className="flex flex-row-reverse mr-8">
-                <a href="#" className="text-black hover:bg-black hover:text-white px-3 py-2  font-medium transition-colors duration-300 ease-in-out">English</a>
+                <a href="/English" className="text-black hover:bg-black hover:text-white px-3 py-2  font-medium transition-colors duration-300 ease-in-out">English</a>
                 <a href="." className="text-black hover:bg-black hover:text-white px-3 py-2 font-medium transition-colors duration-300 ease-in-out">Español</a>
               </div>
             </div>

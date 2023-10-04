@@ -66,7 +66,7 @@ export default function Forms() {
             {Object.keys(todos).map((todoKey) => {
               const todo = todos[todoKey];
               return (
-                <div className=" border-2 border-black p-3 mb-3 md:w-80 w-30 flex justify-center" key={todoKey}>
+                <div className=" border-2 text-white bg-black hover:bg-white hover:text-black border-black p-3 mb-3 md:w-80 w-30 flex justify-center" key={todoKey}>
                   {todo}
                 </div>
               );
