@@ -47,12 +47,12 @@ export default function Forms() {
         <div className="p-3">
           <label htmlFor="website-admin" className=" font-semibold text-black">Nombre / Alias</label>
             <div className="flex">
-              <input type="email" className="border-2 p-3 border-black md:w-[65ch] w-[35ch] placeholder:hover:invisible" placeholder="Adrian Bravo"/>
+              <input type="email" className="border-2 p-3 border-black md:w-[65ch] w-[30ch] placeholder:hover:invisible" placeholder="Adrian Bravo"/>
             </div>
           
             <div className="mt-2">
               <label htmlFor="message" className="font-semibold text-black flex">Comentario</label>
-              <textarea id="message" rows="4" className="p-3 border-2 md:w-[65ch] w-[35ch] border-black placeholder:hover:invisible"
+              <textarea id="message" rows="4" className="p-3 border-2 md:w-[65ch] w-[30ch] border-black placeholder:hover:invisible"
               placeholder="Deja un mensaje en mi buzón..." 
               value={todo} onChange={(e) => setTodo(e.target.value)}
               />
@@ -60,13 +60,13 @@ export default function Forms() {
             </div>
 
 
-            <div className="md:p-3 md:ml-96 md:m-3 mt-3 max-w-xl flex flex-col-reverse">
+            <div className="md:p-3 md:ml-96 md:m-3 mt-3 w-[30] flex flex-col-reverse">
             {loading && <span className="">Loading...</span>}
             {error && <span className="text-red-500 font-bold">Error: {error}</span>}
             {Object.keys(todos).map((todoKey) => {
               const todo = todos[todoKey];
               return (
-                <div className=" border-2 border-black p-3 mb-3 w-80 flex justify-center" key={todoKey}>
+                <div className=" border-2 border-black p-3 mb-3 md:w-80 w-30 flex justify-center" key={todoKey}>
                   {todo}
                 </div>
               );
