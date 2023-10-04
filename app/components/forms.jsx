@@ -15,11 +15,11 @@ export default function Forms() {
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
         const todosData = docSnap.data().todos;
-        setTodos(todosData); // Set todos directly without reversing
+        setTodos(todosData);
         setLoading(false);
       }
     } catch (error) {
-      setError('Failed to load to do');
+      setError('Failed to load');
       setLoading(false);
     }
   }
@@ -43,34 +43,38 @@ export default function Forms() {
     fetchData();
   }, []);
     return (
-      <main className=" md:max-w-xl max-w-sm flex">
+      <main className=" md:max-w-xl max-w-sm felx md:flex-col md:columns-2">
         <div className="p-3">
           <label htmlFor="website-admin" className=" font-semibold text-black">Nombre / Alias</label>
             <div className="flex">
-              <input type="email" className="border-2 p-3 border-black w-[65ch] placeholder:hover:invisible" placeholder="Adrian Bravo"/>
+              <input type="email" className="border-2 p-3 border-black md:w-[65ch] w-[35ch] placeholder:hover:invisible" placeholder="Adrian Bravo"/>
             </div>
           
-            <div className="mt-2 max-lg:">
-              <label htmlFor="message" className="font-semibold text-black">Comentario</label>
-              <textarea id="message" rows="4" className="border-2 p-3 border-black w-[65ch] placeholder:hover:invisible"
+            <div className="mt-2">
+              <label htmlFor="message" className="font-semibold text-black flex">Comentario</label>
+              <textarea id="message" rows="4" className="p-3 border-2 md:w-[65ch] w-[35ch] border-black placeholder:hover:invisible"
               placeholder="Deja un mensaje en mi buzón..." 
               value={todo} onChange={(e) => setTodo(e.target.value)}
-              ></textarea>
-              <button onClick={HandlerTodo} type="button" className="border-2 border-black p-2 hover:bg-black hover:text-white duration-300 ease-in-out">Enviar</button>
+              />
+              <button onClick={HandlerTodo} type="button" className=" flex border-2 border-black p-2 hover:bg-black hover:text-white duration-300 ease-in-out">Enviar</button>
             </div>
-          </div>
-          <div className="p-3 m-3 max-w-xl flex flex-col">
+
+
+            <div className="md:p-3 md:ml-96 md:m-3 mt-3 max-w-xl flex flex-col-reverse">
             {loading && <span className="">Loading...</span>}
-            {error && <span className="text-red-500">Error: {error}</span>}
+            {error && <span className="text-red-500 font-bold">Error: {error}</span>}
             {Object.keys(todos).map((todoKey) => {
               const todo = todos[todoKey];
               return (
-                <div className="border-2 border-black p-3 mb-3 w-80 flex justify-center" key={todoKey}>
+                <div className=" border-2 border-black p-3 mb-3 w-80 flex justify-center" key={todoKey}>
                   {todo}
                 </div>
               );
             })}
           </div>
+
+        </div>
+          
       </main>
       
     )
