@@ -12,7 +12,7 @@ export default function Navbar() {
                   <div className="flex md:pl-3">
                     <a href="." className="text-black hover:bg-black hover:text-white px-3 py-2 font-medium transition-colors duration-300 ease-in-out">Portafolio</a>
                     <a href="/curriculum" className="text-black hover:bg-black hover:text-white px-3 py-2 font-medium transition-colors duration-300 ease-in-out">Curriculum</a>
-                    <a href="/comentarios" className="text-black hover:bg-black hover:text-white px-3 py-2  font-medium transition-colors duration-300 ease-in-out">Comentarios</a>
+                    <a href="/comentarios" className="text-black hover:bg-black hover:text-white px-3 py-2  font-medium transition-colors duration-300 ease-in-out">Contacto</a>
                   </div>
                 </div>
               </div>
