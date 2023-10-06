@@ -8,14 +8,14 @@ export default function Forms() {
   const [error, setError] = useState(null);
   const [todos, setTodos] = useState([]);
   const [todo, setTodo] = useState('');
-  
+  const [name, setName] = useState('');
 
   async function fetchData() {
     try {
       const docRef = doc(db, 'users', 'master');
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
-        const todosData = docSnap.data().todos;
+        const todosData = docSnap.data().todos || {}; // Ensure todosData is an object
         setTodos(todosData);
         setLoading(false);
       }
@@ -26,69 +26,84 @@ export default function Forms() {
   }
 
   async function HandlerTodo() {
-    if (!todo) {
+    if (!todo || !name) {
       return;
     }
     const newKey = Object.keys(todos).length === 0 ? 1 : Math.max(...Object.keys(todos)) + 1;
     const userRef = doc(db, 'users', 'master');
+
+    // Include both the name and the todo in the document
     await setDoc(userRef, {
       todos: {
-        [newKey]: todo,
+        [newKey]: {
+          name: name,
+          content: todo,
+        },
       },
     }, { merge: true });
+
     setTodo('');
+    setName('');
     fetchData();
   }
 
   useEffect(() => {
     fetchData();
   }, []);
-    return (
-      <main className="flex flex-col md:flex-row">
-        <div className="p-3 md:w-1/2">
-          <label htmlFor="website-admin" className="font-semibold text-black">Nombre / Alias</label>
-          <div className="flex">
-            <input
-              type="email"
-              className="border-2 p-3 border-black md:w-[65ch] w-[40ch] placeholder:hover:invisible"
-              placeholder="Adrian Bravo"
-            />
-          </div>
 
-          <div className="mt-2">
-            <label htmlFor="message" className="font-semibold text-black flex">Comentario</label>
-            <textarea
-              id="message"
-              rows="4"
-              className="p-3 border-2 md:w-[65ch] w-[40ch] border-black placeholder:hover:invisible"
-              placeholder="Deja un mensaje en mi buzón..."
-              value={todo}
-              onChange={(e) => setTodo(e.target.value)}
-            />
-            <button
-              onClick={HandlerTodo}
-              type="button"
-              className="flex border-2 border-black p-2 hover:bg-black hover:text-white duration-300 ease-in-out"
-            >
-              Enviar
-            </button>
-          </div>
+  return (
+    <main className="flex flex-col md:flex-row">
+      <div className="p-3 md:w-1/2">
+        <label htmlFor="website-admin" className="font-semibold text-black">Nombre / Alias</label>
+        <div className="flex">
+          <input
+            type="text"
+            className="border-2 p-3 border-black md:w-[65ch] w-[40ch] placeholder:hover:invisible"
+            placeholder="Adrian Bravo"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
         </div>
 
-        <div className="md:mt-6 md:w-1/2 mt-3 p-3 md:p-3">
-          <div className="grid md:grid-cols-2">
-            {loading && <span className="">Loading...</span>}
-            {error && <span className="text-red-500 font-bold border-2 border-red-700 bg-red-200 flex justify-center">Error: {error}</span>}
-            {Object.keys(todos).map((todoKey) => {
-              const todo = todos[todoKey];
+        <div className="mt-2">
+          <label htmlFor="message" className="font-semibold text-black flex">Comentario</label>
+          <textarea
+            id="message"
+            rows="4"
+            className="p-3 border-2 md:w-[65ch] w-[40ch] border-black placeholder:hover:invisible"
+            placeholder="Deja un mensaje en mi buzón..."
+            value={todo}
+            onChange={(e) => setTodo(e.target.value)}
+          />
+          <button
+            onClick={HandlerTodo}
+            type="button"
+            className="flex border-2 border-black p-2 hover:bg-black hover:text-white duration-300 ease-in-out"
+          >
+            Enviar
+          </button>
+        </div>
+      </div>
+
+      <div className="md:mt-6 md:w-1/2 mt-3 p-3 md:p-3">
+        <div className="grid md:grid-cols-2">
+          {loading && <span className="">Loading...</span>}
+          {error && <span className="text-red-500 font-bold border-2 border-red-700 bg-red-200 flex justify-center">Error: {error}</span>}
+          {Object.keys(todos).length > 0 ? (
+            Object.keys(todos).map((todoKey) => {
+              const todoItem = todos[todoKey];
               return (
                 <div className="mb-3 p-3 md:mr-3  border-2 text-white bg-black hover:bg-white hover:text-black border-black justify-center" key={todoKey}>
-                  {todo}
+                  <div className="font-semibold">{todoItem.name}</div>
+                  <div>{todoItem.content}</div>
                 </div>
               );
-            })}
-          </div>
+            })
+          ) : (
+            <span>No comments yet.</span>
+          )}
         </div>
-      </main>
-    )
-  }
+      </div>
+    </main>
+  )
+}
