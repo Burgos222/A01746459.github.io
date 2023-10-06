@@ -9,13 +9,14 @@ export default function Forms() {
   const [todos, setTodos] = useState([]);
   const [todo, setTodo] = useState('');
   const [name, setName] = useState('');
+  const [errorMessage, setErrorMessage] = useState(''); // Error message state
 
   async function fetchData() {
     try {
       const docRef = doc(db, 'users', 'master');
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
-        const todosData = docSnap.data().todos || {}; // Ensure todosData is an object
+        const todosData = docSnap.data().todos || {};
         setTodos(todosData);
         setLoading(false);
       }
@@ -27,12 +28,12 @@ export default function Forms() {
 
   async function HandlerTodo() {
     if (!todo || !name) {
+      setErrorMessage('Por favor completa todos los campos.');
       return;
     }
     const newKey = Object.keys(todos).length === 0 ? 1 : Math.max(...Object.keys(todos)) + 1;
     const userRef = doc(db, 'users', 'master');
 
-    // Include both the name and the todo in the document
     await setDoc(userRef, {
       todos: {
         [newKey]: {
@@ -44,6 +45,7 @@ export default function Forms() {
 
     setTodo('');
     setName('');
+    setErrorMessage('');
     fetchData();
   }
 
@@ -54,11 +56,11 @@ export default function Forms() {
   return (
     <main className="flex flex-col md:flex-row">
       <div className="p-3 md:w-1/2">
-        <label htmlFor="website-admin" className="font-semibold text-black">Nombre / Alias</label>
+        <label htmlFor="website-admin" className="font-semibold text-black">Nombre / Alias / Email</label>
         <div className="flex">
           <input
             type="text"
-            className="border-2 p-3 border-black md:w-[65ch] w-[40ch] placeholder:hover:invisible"
+            className="border-2 p-3 border-black md:w-full w-full placeholder:hover:invisible"
             placeholder="Adrian Bravo"
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -70,7 +72,7 @@ export default function Forms() {
           <textarea
             id="message"
             rows="4"
-            className="p-3 border-2 md:w-[65ch] w-[40ch] border-black placeholder:hover:invisible"
+            className="p-3 border-2 md:w-full w-full border-black placeholder:hover:invisible"
             placeholder="Deja un mensaje en mi buzón..."
             value={todo}
             onChange={(e) => setTodo(e.target.value)}
@@ -83,6 +85,12 @@ export default function Forms() {
             Enviar
           </button>
         </div>
+
+        {errorMessage && (
+          <div className="text-red-500 mt-2">
+            {errorMessage}
+          </div>
+        )}
       </div>
 
       <div className="md:mt-6 md:w-1/2 mt-3 p-3 md:p-3">
@@ -100,7 +108,7 @@ export default function Forms() {
               );
             })
           ) : (
-            <span>No comments yet.</span>
+            <span>*-*</span>
           )}
         </div>
       </div>
