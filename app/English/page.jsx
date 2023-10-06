@@ -38,16 +38,7 @@ export default function Home() {
             images={forth}
             className="bg-white"
             title="ArabaMarket"
-            description="In this project, a team of around 30 Computer Technologies Engineers came together
-             to develop an innovative web platform. We utilized a set of technologies that included AWS, 
-             GCP, and Flask for the website's creation. On the front-end side, we employed React.js, while
-              Node.js was used for the back-end development. The database was managed through MongoDB.
-            My main contribution was focused on the back-end development, where I was responsible for
-             establishing routes and connections with the database. This enabled real-time display of 
-             auctions, along with car images, prices, and details. Additionally, I actively participated in 
-             the design and implementation of the business model. Although my primary focus was on the 
-             back-end, I also had a significant involvement in the front-end, contributing to image
-              deployment and the formatting of some tables and prices."
+            description="In this project, a team of approximately 30 Computer Technology Engineers came together to develop an innovative web platform. We utilized technologies such as AWS, GCP, and Flask to create the website, with React.js on the front-end and Node.js on the back-end. The database was managed using MongoDB. My primary contribution focused on the back-end development, where I established routes and connections with the database to display real-time auctions, along with car details. I also actively participated in designing the business model and contributed to the front-end, particularly in the deployment of images and formatting of tables and prices."
             linkUrl="https://miscompetenciastec21.tec.mx/elumen/portfolio/BYNdLg9HeVLTeDK6"
           />
           <Tag

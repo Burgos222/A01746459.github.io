@@ -29,27 +29,24 @@ export default function Home() {
 
   return (
     <main className='grid'>
-      <div className='p-3 flex'>
+      <div className='p-3 md:flex'>
         <Presentation/>
       </div>
+     
       <div className='ml-3 mr-3'>
         <div className='grid grid-row'>
         <Tag
             images={forth}
             className="bg-white"
             title="ArabaMarket"
-            description="En este proyecto, un equipo de alrededor de 30 Ingenieros en Tecnologías 
-            Computacionales se unió para desarrollar una plataforma web innovadora. Utilizamos un 
-            conjunto de tecnologías que incluyeron AWS, GCP y Flask para la creación de la página web. 
-            En el lado del front-end, se empleó React.js, mientras que Node.js se utilizó para el desarrollo
-            del back-end. La base de datos fue gestionada a través de MongoDB.
-            Mi contribución principal se centró en el desarrollo del back-end, donde me encargué 
-            de establecer las rutas y las conexiones con la base de datos. Esto permitió mostrar 
-            subastas en tiempo real, junto con imágenes, precios y detalles de los automóviles. 
-            Además, participé activamente en el diseño e implementación del modelo de negocios. 
-            Aunque mi enfoque principal fue el back-end, también tuve una participación 
-            significativa en el front-end, contribuyendo al despliegue de imágenes y al formato de 
-            algunas tablas y precios."
+            description="En este proyecto, un equipo de alrededor de 30 ingenieros en Tecnologías
+             Computacionales se unió para desarrollar una plataforma web innovadora. Utilizamos
+             tecnologías como AWS, GCP y Flask para crear la página web, con React.js en el front-end
+             y Node.js en el back-end. La base de datos fue gestionada con MongoDB. Mi contribución
+             principal se centró en el desarrollo del back-end, estableciendo rutas y conexiones
+             con la base de datos para mostrar subastas en tiempo real, junto con detalles 
+             de automóviles. También participé en el diseño del modelo de negocios y contribuí
+             al front-end, especialmente en el despliegue de imágenes y formato de tablas y precios."
             linkUrl="https://miscompetenciastec21.tec.mx/elumen/portfolio/BYNdLg9HeVLTeDK6"
           />
           <Tag
