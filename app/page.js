@@ -52,7 +52,7 @@ export default function Home() {
           <Tag
             images={images}
             title="Resaltador de Sintaxis para Procesamiento Eficiente de Archivos a Gran Escala"
-            description="Se ha desarrolló un resaltador de sintaxis en Python capaz de procesar una
+            description="Se desarrolló un resaltador de sintaxis en Python capaz de procesar una
              gran cantidad de archivos (más de 2000) de manera eficiente. Estos archivos son procesados 
              en paralelo, aprovechando los múltiples núcleos de la computadora. Una vez que son procesados 
              por el tokenizador, los resultados se presentan en una página web con resaltado de sintaxis en 
