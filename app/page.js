@@ -1,6 +1,7 @@
 'use client';
 import Tag from './components/tag';
 import Presentation from './components/presentation';
+import Trayectoria from './components/trayectoria';
 
 export default function Home() {
   const images = [
@@ -26,15 +27,34 @@ export default function Home() {
     { src: 'resources/node-js.png', alt: 'Image 5' },
     { src: 'resources/mongodb.png', alt: 'Image 6' },
   ]
+  const fifth = [
+    { src: 'resources/keras.png', alt: 'Image 7' },
+    { src: 'resources/react.png', alt: 'Image 4' },
+    { src: 'resources/sklearn.png', alt: 'Image 8' },
+  ]
 
   return (
     <main className='grid'>
-      <div className='p-3 md:flex'>
+      <div className='p-3 grid-cols-3 md:flex'>
         <Presentation/>
+        <Trayectoria/>
+                
+
       </div>
      
       <div className='ml-3 mr-3'>
         <div className='grid grid-row'>
+          <Tag
+            images={fifth}
+            className="bg-white"
+            title="NO-LINGER"
+            description="Aplicación móvil sin servidor desarrollada con React Native, que emplea Inteligencia
+            Artificial para reconocer bolsas de papas en un estante a través de fotografías.
+            La implementación de la IA se realizó utilizando tecnologías como SkLearn y Keras, entre otras.
+            Participación en el entrenamiento del modelo de IA, así como en el diseño y desarrollo de la 
+            experiencia e interfaz de usuario (UX/UI)."
+            linkUrl="https://miscompetenciastec21.tec.mx/elumen/portfolio/BYNdLg9HeVLTeDK6"
+          />
         <Tag
             images={forth}
             className="bg-white"

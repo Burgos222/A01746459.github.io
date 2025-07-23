@@ -1,6 +1,7 @@
 'use client';
 import Tag from '../components/tag';
 import Presentation from '../components/presentation';
+import CareerPath from '../components/trayectory';
 
 export default function Home() {
   const images = [
@@ -26,14 +27,33 @@ export default function Home() {
     { src: 'resources/node-js.png', alt: 'Image 5' },
     { src: 'resources/mongodb.png', alt: 'Image 6' },
   ]
-
+  const fifth = [
+    { src: 'resources/keras.png', alt: 'Image 7' },
+    { src: 'resources/react.png', alt: 'Image 4' },
+    { src: 'resources/sklearn.png', alt: 'Image 8' },
+  ]
   return (
     <main className='grid'>
       <div className='p-3 flex'>
         <Presentation/>
+        <CareerPath/>
       </div>
       <div className='ml-3 mr-3'>
         <div className='grid grid-row'>
+          <Tag
+            images={fifth}
+            className="bg-white"
+            title="NO-LINGER"
+            description={
+              `Serverless mobile application developed with React Native, which uses Artificial 
+              Intelligence to recognize bags of potatoes on a shelf through photographs. 
+              The AI implementation was done using technologies like SkLearn and Keras, among others. 
+              Participation included training the AI model as well as designing and developing the 
+              user experience and interface (UX/UI).`
+            }
+            linkUrl="https://miscompetenciastec21.tec.mx/elumen/portfolio/BYNdLg9HeVLTeDK6"
+          />
+
         <Tag
             images={forth}
             className="bg-white"
